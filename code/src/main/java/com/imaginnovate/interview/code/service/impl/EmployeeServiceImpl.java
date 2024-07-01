@@ -17,10 +17,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Autowired
 	private EmployeeRepository employeeRepository;
 
+	@Override
 	public Employee saveEmployee(Employee employee) {
 		return employeeRepository.save(employee);
 	}
 
+	@Override
 	public EmployeeTaxInfo calculateTax(Employee employee) {
 		double yearlySalary = calculateYearlySalary(employee);
 		double taxAmount = calculateTaxAmount(yearlySalary);
